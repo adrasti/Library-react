@@ -1,0 +1,577 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --scale1: 1.1;
+}
+
+@font-face {
+  font-family: averia;
+  src: url(../assets/AveriaSerifLibre-Regular.ttf);
+}
+
+body {
+  background-image: url(../assets/library.jpg);
+  background-repeat: round repeat;
+  max-width: 100vw;
+  font-family: averia;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  display: inline-block;
+  border: none;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.shelf {
+  background-image: url(../assets/bookshelf.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: calc(962px * var(--scale1));
+  height: calc(766px * var(--scale1));
+}
+
+.pages {
+  font-family: "Times New Roman", Times, serif;
+  position: relative;
+}
+
+.pages::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: -5px;
+  content: "";
+  width: 70%;
+  border-top: solid rgba(232, 212, 102, 0.463) 1px;
+}
+
+.grid {
+  display: grid;
+  margin: calc(18px * var(--scale1));
+  grid-template-rows: repeat(3, calc(222px * var(--scale1)));
+  grid-template-columns: repeat(4, 1fr);
+  gap: calc(27px * var(--scale1)) calc(27px * var(--scale1));
+  justify-items: center;
+}
+
+.content {
+  background-image: url(../assets/book.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 90%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.tit {
+  font-size: 1.1rem;
+}
+
+.author {
+  font-size: 0.85rem;
+}
+
+.text {
+  overflow-wrap: break-word;
+  height: calc(200px * var(--scale1));
+  width: calc(150px * var(--scale1));
+  margin-left: 6px;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.info {
+  width: 100%;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  margin-top: 7px;
+  overflow: scroll;
+}
+
+.info::-webkit-scrollbar {
+  display: none;
+}
+
+.read {
+  background-color: rgba(255, 255, 255, 0.538);
+  color: green;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 0.8rem;
+  position: relative;
+}
+
+.unread {
+  color: rgb(196, 79, 79);
+  background-color: rgba(255, 255, 255, 0.538);
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 0.8rem;
+}
+
+.info > span {
+  display: block;
+  margin-bottom: 10px;
+  margin-right: 6px;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.header {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.header > div > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#library {
+  background-image: url(../assets/wood.jpg);
+  border: solid rgb(123, 89, 60) 5px;
+  padding: 5px;
+  margin-top: 10px;
+  font-size: 3.5rem;
+}
+
+#functionality {
+  display: flex;
+  flex: 1;
+  width: calc(962px * var(--scale1));
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: black;
+  font-weight: bolder;
+}
+
+#functionality > div {
+  background-image: url(../assets/wood1.jpg);
+  background-size: 150px;
+  padding: 10px;
+  padding-bottom: 5px;
+  border: solid rgb(92, 64, 51) 2px;
+}
+
+#functionality:nth-child(2) {
+  margin-left: 25px;
+}
+
+#functionality > div > span {
+  background-image: url(../assets/wood.jpg);
+  background-size: 150px;
+  padding: 10px;
+}
+
+#list {
+  background: url(../assets/list.svg);
+  filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(33deg) brightness(110%)
+    contrast(101%);
+  width: 100px;
+  height: 100px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+#list:hover {
+  transform: scale(1.05);
+}
+
+#add {
+  background: url(../assets/add.svg);
+  filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(33deg) brightness(110%)
+    contrast(101%);
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+#add:hover {
+  transform: scale(1.05);
+}
+
+.del {
+  background: url(../assets/del.svg) no-repeat;
+  width: 25px;
+  height: 25px;
+  filter: invert(10%) sepia(35%) saturate(7492%) hue-rotate(354deg)
+    brightness(101%) contrast(118%);
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.del:hover {
+  opacity: 0.8;
+}
+
+.libraryForm {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(135, 206, 235, 0.7);
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+form {
+  width: 450px;
+  margin: 0 auto;
+}
+
+form > div {
+  position: relative;
+  background: white;
+}
+
+form > div > label {
+  opacity: 0.3;
+  position: absolute;
+  top: 22px;
+  left: 20px;
+}
+
+form > div > input[type="text"],
+form > div > input[type="number"] {
+  width: 380px;
+  border: 0;
+  padding: 20px 20px 20px 50px;
+  background: #eee;
+  font-size: 16px;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#r {
+  border: 0;
+  padding: 10px 00px 10px 20px;
+  background: #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#r label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0px 15px;
+  line-height: 34px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  user-select: none;
+}
+
+#r input[type="radio"] {
+  display: none;
+}
+
+#r div {
+  display: inline-block;
+}
+
+#one input[type="radio"]:checked + label {
+  background: #bbffbb;
+}
+
+#two input[type="radio"]:checked + label {
+  background: #ffc5c5;
+}
+
+#two {
+  margin-right: 30px;
+}
+
+form > div > input[type="text"]:focus,
+form > div > input[type="number"]:focus {
+  outline: 0;
+  background: white;
+}
+
+form > div > input[type="text"]:focus + label,
+form > div > input[type="number"]:focus + label {
+  opacity: 0;
+}
+
+form > div > input[type="text"]:valid,
+form > div > input[type="number"]:valid {
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 20px 20px;
+}
+
+form > div > input[type="text"]:valid + label,
+form > div > input[type="number"]:valid + label {
+  opacity: 0;
+}
+form > div > input[type="text"]:invalid:not(:focus):not(:placeholder-shown),
+form > div > input[type="number"]:invalid:not(:focus):not(:placeholder-shown),
+form
+  > div
+  > input[type="password"]:invalid:not(:focus):not(:placeholder-shown) {
+  background: pink;
+}
+form
+  > div
+  > input[type="text"]:invalid:not(:focus):not(:placeholder-shown)
+  + label,
+form
+  > div
+  > input[type="number"]:invalid:not(:focus):not(:placeholder-shown)
+  + label,
+form
+  > div
+  > input[type="password"]:invalid:not(:focus):not(:placeholder-shown)
+  + label {
+  opacity: 0;
+}
+form
+  > div
+  > input[type="text"]:invalid:focus:not(:placeholder-shown)
+  ~ .requirements,
+form
+  > div
+  > input[type="number"]:invalid:focus:not(:placeholder-shown)
+  ~ .requirements,
+form
+  > div
+  > input[type="password"]:invalid:focus:not(:placeholder-shown)
+  ~ .requirements {
+  max-height: 200px;
+  padding: 0 30px 20px 50px;
+}
+form > div .requirements {
+  padding: 0 30px 0 50px;
+  color: #999;
+  max-height: 0;
+  transition: 0.28s;
+  overflow: hidden;
+  color: red;
+  font-style: italic;
+}
+
+form > div .requirements {
+  padding: 0 30px 0 50px;
+  color: #999;
+  max-height: 0;
+  transition: 0.28s;
+  overflow: hidden;
+  color: red;
+  font-style: italic;
+}
+
+#addbuttons {
+  position: relative;
+  display: flex;
+  width: 78%;
+  margin: 20px 0;
+  height: 60px;
+  background: #41d873;
+  color: white;
+  border: 0;
+  font-size: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#a {
+  height: 100%;
+  cursor: pointer;
+  width: 60%;
+  background: #41d873;
+  color: white;
+  border: 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+#b {
+  display: inline-block;
+  width: 19%;
+  margin: 20px 0;
+  background: #e3242b;
+  color: white;
+  border: 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+#demo {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  padding: 5px;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: rgb(167, 139, 245);
+}
+
+form > span {
+  display: flex;
+  justify-content: space-between;
+}
+
+#table {
+  min-height: 100%;
+  width: 100%;
+  background-color: rgba(135, 206, 235);
+  position: absolute;
+  z-index: 11;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: calc(962px * var(--scale1));
+  height: 100px;
+  overflow: visible;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+tbody {
+  height: 50px;
+}
+tbody:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tbody:nth-child(odd) {
+  background-color: white;
+}
+
+thead {
+  height: 50px;
+  background-color: rgb(239, 203, 208);
+}
+
+th {
+  cursor: pointer;
+}
+
+th:first-of-type {
+  width: 100px;
+}
+
+th:nth-of-type(2) {
+  width: 379px;
+}
+
+th:nth-of-type(3) {
+  width: 379px;
+}
+
+th:nth-of-type(4) {
+  width: 100px;
+}
+
+#close {
+  background: url(../assets/close.svg);
+  border: solid black 2px;
+  cursor: pointer;
+  position: fixed;
+  z-index: 12;
+  right: 5px;
+  top: 5px;
+  height: 70px;
+  width: 70px;
+}
+
+.none {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --scale1: 0.9;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --scale1: 0.35;
+    font-size: 7px;
+  }
+  .del {
+    height: 13px;
+    aspect-ratio: 1;
+    margin-left: 0px;
+    width: unset;
+  }
+  .info {
+    margin-top: 1px;
+  }
+  .info > span {
+    margin-bottom: 0px;
+  }
+  #add,
+  #list {
+    width: 50px;
+    height: 50px;
+  }
+  .read,
+  .unread {
+    margin-right: 5px;
+    padding: 0;
+  }
+  #functionality:nth-child(2) {
+    margin-left: 0;
+  }
+  form > div > input[type="text"],
+  form > div > input[type="number"] {
+    width: calc(345px * var(--scale1) * 1.8);
+  }
+  form {
+    width: calc(409px * var(--scale1) * 2);
+  }
+  .buttons {
+    margin-right: 0;
+    justify-content: space-around;
+  }
+  .header {
+    height: 200px;
+  }
+  .pages::after {
+    top: 0px;
+  }
+}

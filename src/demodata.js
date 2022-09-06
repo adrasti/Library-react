@@ -1,0 +1,51 @@
+export const data = [
+  {
+    title: "The Last Wish",
+    authName: "Andrzej Sapkowski",
+    pageNum: "304",
+    isRead: true,
+    id: "1662314269395",
+  },
+  {
+    title: "The Idiot",
+    authName: "Fyodor Dostoevsky",
+    pageNum: "667",
+    isRead: false,
+    id: "1662314332960",
+  },
+  {
+    title: "War and Peace",
+    authName: "Leo Tolstoy",
+    pageNum: "1392",
+    isRead: true,
+    id: "1662314384894",
+  },
+  {
+    title: "A Storm of Swords",
+    authName: "George R.R. Martin",
+    pageNum: "1177",
+    isRead: true,
+    id: "1662314451838",
+  },
+  {
+    title: "The Republic",
+    authName: "Plato",
+    pageNum: "416",
+    isRead: true,
+    id: "1662314496035",
+  },
+  {
+    title: "The Green Mile",
+    authName: "Stephen King",
+    pageNum: "592",
+    isRead: false,
+    id: "1662314564913",
+  },
+  {
+    title: "Atlas Shrugged",
+    authName: "Ayn Rand",
+    pageNum: "1168",
+    isRead: false,
+    id: "1662314648987",
+  },
+];
