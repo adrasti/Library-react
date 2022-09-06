@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Library-react/static/css/main.882a208b.css",
+    "main.js": "/Library-react/static/js/main.f316f597.js",
+    "static/js/787.066d04b7.chunk.js": "/Library-react/static/js/787.066d04b7.chunk.js",
+    "static/media/wood1.jpg": "/Library-react/static/media/wood1.4c0e32795bcb368b4ceb.jpg",
+    "static/media/library.jpg": "/Library-react/static/media/library.9819024de09fbacf9a08.jpg",
+    "static/media/bookshelf.jpg": "/Library-react/static/media/bookshelf.4feeff66a5130ed9dd12.jpg",
+    "static/media/AveriaSerifLibre-Regular.ttf": "/Library-react/static/media/AveriaSerifLibre-Regular.f5ec4790e5215d707e70.ttf",
+    "static/media/wood.jpg": "/Library-react/static/media/wood.72907a2e30e896d277ed.jpg",
+    "static/media/add.svg": "/Library-react/static/media/add.43074dd4d9ab3f2a5783.svg",
+    "static/media/list.svg": "/Library-react/static/media/list.f68f90f1d2d30f3dd029.svg",
+    "static/media/del.svg": "/Library-react/static/media/del.821c4c98fcbd0b19b3e2.svg",
+    "index.html": "/Library-react/index.html",
+    "static/media/close.svg": "/Library-react/static/media/close.5f61a88247b1f9a422d7.svg",
+    "main.882a208b.css.map": "/Library-react/static/css/main.882a208b.css.map",
+    "main.f316f597.js.map": "/Library-react/static/js/main.f316f597.js.map",
+    "787.066d04b7.chunk.js.map": "/Library-react/static/js/787.066d04b7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.882a208b.css",
+    "static/js/main.f316f597.js"
+  ]
+}
